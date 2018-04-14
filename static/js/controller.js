@@ -2,7 +2,8 @@ function search() {
     let config = {};
     let title = document.getElementById("titleInput").value;
     let pTitle = title.replace(/ /g, "+")
-    fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=72961f58&t=${pTitle}`)
+    let year = document.getElementById("yearInput").value;
+    fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=72961f58&t=${pTitle}&y=${year}`)
     .then(function(response) {
         console.log(response)
         return response.json()
