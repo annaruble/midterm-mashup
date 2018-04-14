@@ -9,7 +9,7 @@ $(function() {
             type: "video",
             q: encodeURIComponent($("#search").val()).replace(/%20/g, "+"),
             maxResults: 1,
-            order: "viewCount"
+            order: "viewCount",
             topicId: "/m/02vxn"
 
        }); 
@@ -21,13 +21,13 @@ $(function() {
           })
           
        });
-    });
-    
+    })
+})
 
 
 function init() {
     gapi.client.setApiKey("AIzaSyDy2xbhsGj_IOO3FZPnTlhrsPn1oDK0DjI");
     gapi.client.load("youtube", "v3", function() {
         // yt api is ready
-    });
-};
+    })
+}
