@@ -14,6 +14,9 @@ function search() {
             alert("Your title was not found. Please try rephrasing or searching a new title.")
         }
         checkTitle(movieInfo)
+        let trailQ = movieInfo["Title"] + " Trailer"
+        console.log(trailQ)
+        getPromo(trailQ)
     })
 }
 
