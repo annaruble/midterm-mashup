@@ -11,7 +11,7 @@ $(function() {
             maxResults: 1,
             order: "viewCount"
             topicId: "/m/02vxn"
-            
+
        }); 
        // execute the request
        request.execute(function(response) {
@@ -26,7 +26,7 @@ $(function() {
 
 
 function init() {
-    gapi.client.setApiKey("YOUR_PUBLIC_KEY");
+    gapi.client.setApiKey("AIzaSyDy2xbhsGj_IOO3FZPnTlhrsPn1oDK0DjI");
     gapi.client.load("youtube", "v3", function() {
         // yt api is ready
     });
