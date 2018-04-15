@@ -3,7 +3,7 @@ function search() {
     let title = document.getElementById("titleInput").value;
     let pTitle = title.replace(/ /g, "+")
     let year = document.getElementById("yearInput").value;
-    fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=72961f58&t=${pTitle}&y=${year}`)
+    fetch(`https://www.omdbapi.com/?i=tt3896198&apikey=72961f58&t=${pTitle}&type=movie&y=${year}`)
     .then(function(response) {
         console.log(response)
         return response.json()
@@ -15,21 +15,18 @@ function search() {
             alert("Your title was not found. Please try rephrasing or searching a new title.")
         }
         checkTitle(movieInfo)
-        let trailQ = movieInfo["Title"] + " Trailer"
+        let trailQ = movieInfo["Title"] + " " + movieInfo["Year"] + " Trailer"
         console.log(trailQ)
         getPromo(trailQ)
     })
 }
 
 function checkTitle(movieInfo) {
-    document.getElementById("title").innerHTML = movieInfo["Title"]
-    document.getElementById("year").innerHTML = movieInfo["Year"]
+    document.getElementById("titleYr").innerHTML = movieInfo["Title"] + " (" + movieInfo["Year"] + ")"
     document.getElementById("rating").innerHTML = movieInfo["Rated"]
     document.getElementById("runtime").innerHTML = movieInfo["Runtime"]
     document.getElementById("genre").innerHTML = movieInfo["Genre"]
-    document.getElementById("director").innerHTML = movieInfo["Director"]
-    document.getElementById("actors").innerHTML = movieInfo["Actors"]
+    document.getElementById("actorsDir").innerHTML = movieInfo["Actors"] + " | Director: " + movieInfo["Director"]
     document.getElementById("plot").innerHTML = movieInfo["Plot"]
-    document.getElementById("language").innerHTML = movieInfo["Language"]
-    document.getElementById("country").innerHTML = movieInfo["Country"]
+    //document.getElementById("score").innerHTML = movieInfo["Ratings"[1]["Value"]]
 }

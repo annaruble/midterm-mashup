@@ -2,56 +2,66 @@
 
 <head>
     <title>Movies Info</title>
+    <link rel="stylesheet" href="./css/styles.css" type=text/css>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
 <body>
-<div id="container">
+<div class="container-fluid">
 
-<div id="searchForm" class="panel panel-default col-md-12">
-    <div class="panel body">
+<div id="searchForm" class="panel">
+    <div>
         <h2>Search for a movie: </h2>
-        <p>Enter a movie title:</p>
-        <input id="titleInput"></input>
-        <p>Release year (optional):</p>
-        <input id="yearInput"></input>
-        <button onclick="search()">Search</button>
+        <form>
+            <div>
+                <label>Enter a movie title:</label>
+                <input id="titleInput"></input>
+                &nbsp;
+                <label>Release year (optional):</label>
+                <input id="yearInput"></input>
+
+            <button type="button" onclick="search()" class="btn btn-primary">Search</button>
+            <button type="reset" class="btn btn-default">Reset</button>
+            </div>
+        </form>
     </div>
 </div>
 
-    <div id="info" class="panel panel-default col-md-12">
-        <p id="json"></p>
+    <div id="info">
+        <h3 id="titleYr"></h3>
+        <h6 id="actorsDir"></h6>
+        <p id="plot"></p>
 
-        <h4>Title: </h4>
-        <p id="title"></p>
-
-        <h4>Year:</h4>
+        <!-- <h4>Year:</h4>
         <p id="year"></p>
 
         <h4>Rating:</h4>
         <p id="rating"></p>
 
         <h4>Runtime:</h4>
-        <p id="runtime"></p>
+        <p id="runtime"></p>-->
 
-        <h4>Genre:</h4>
-        <p id="genre"></p>
+        <!--<h4>Director:</h4>
+        <p id="director"></p>-->
 
-        <h4>Director:</h4>
-        <p id="director"></p>
+        <table class="table">
+            <tr>
+                <th>Rating</th>
+                <th>Runtime</th>
+                <th>Genre</th>
+                <th>Tomatometer Score</th>
+                <th>Metascore</th>
+            </tr>
+            <tr>
+                <td id="rating"></td>
+                <td id="runtime"></td>
+                <td id="genre"></td>
+                <td id="Tscore"></td>
+                <td id="Mscore"></td>
+            </tr>
+        </table>
 
-        <h4>Actors:</h4>
-        <p id="actors"></p>
 
-        <h4>Plot:</h4>
-        <p id="plot"></p>
-
-        <h4>Language:</h4>
-        <p id="language"></p>
-
-        <h4>Country:</h4>
-        <p id="country"></p>
-        
     </div>
 
     <div id="trailer">
