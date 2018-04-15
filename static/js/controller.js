@@ -14,11 +14,14 @@ function search() {
         if (movieInfo["Response"] == "False") {
             alert("Your title was not found. Please try rephrasing or searching a new title.")
         }
-        checkTitle(movieInfo)
-        let trailQ = movieInfo["Title"] + " " + movieInfo["Year"] + " Trailer"
-        console.log(trailQ)
-        getPromo(trailQ)
+        else {
+            checkTitle(movieInfo)
+            let trailQ = movieInfo["Title"] + " " + movieInfo["Year"] + " Trailer"
+            console.log(trailQ)
+            getPromo(trailQ)
+        }
     })
+
 }
 
 
