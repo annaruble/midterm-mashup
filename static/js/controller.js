@@ -9,7 +9,7 @@ function search() {
         return response.json()
     })
     .then(function(movieInfo) {
-        console.log(movieInfo)
+        console.log(x = movieInfo)
         //let movieObj = JSON.parse(jsonStr)
         if (movieInfo["Response"] == "False") {
             alert("Your title was not found. Please try rephrasing or searching a new title.")
@@ -21,6 +21,7 @@ function search() {
     })
 }
 
+
 function checkTitle(movieInfo) {
     document.getElementById("titleYr").innerHTML = movieInfo["Title"] + " (" + movieInfo["Year"] + ")"
     document.getElementById("rating").innerHTML = movieInfo["Rated"]
@@ -28,5 +29,7 @@ function checkTitle(movieInfo) {
     document.getElementById("genre").innerHTML = movieInfo["Genre"]
     document.getElementById("actorsDir").innerHTML = movieInfo["Actors"] + " | Director: " + movieInfo["Director"]
     document.getElementById("plot").innerHTML = movieInfo["Plot"]
-    //document.getElementById("score").innerHTML = movieInfo["Ratings"[1]["Value"]]
+    document.getElementById("Tscore").innerHTML = movieInfo["Ratings"][1]["Value"]
+    document.getElementById("Mscore").innerHTML = movieInfo["Ratings"][2]["Value"]
+
 }
