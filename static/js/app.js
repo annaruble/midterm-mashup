@@ -17,6 +17,7 @@ function getPromo(name){
         var results = response.result;
         $.each(results.items, function(index, item){
             trailerId = item.id.videoId
+            console.log("trailerId")
             console.log(trailerId)
             let youTubeLink = "//www.youtube.com/embed/" + trailerId
             console.log(youTubeLink)
