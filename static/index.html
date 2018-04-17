@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Movies Info</title>
+    <title>Movie Magic</title>
     <link rel="stylesheet" href="./css/styles.css" type=text/css>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
@@ -12,6 +12,7 @@
 <div id="searchForm" class="panel">
     <div>
         <h2>Search for a movie: </h2>
+        <p>In order to ensure that you get the results you want, please make sure your search query is as accurate as possible.</p>
         <form>
             <div>
                 <label>Enter a movie title:</label>
@@ -20,7 +21,7 @@
                 <label>Release year (optional):</label>
                 <input id="yearInput"></input>
 
-            <button type="button" onclick="search()" class="btn btn-primary">Search</button>
+            <button type="button" id="enter" onclick="search()" class="btn btn-primary">Search</button>
             <button type="reset" class="btn btn-default">Reset</button>
             </div>
         </form>
